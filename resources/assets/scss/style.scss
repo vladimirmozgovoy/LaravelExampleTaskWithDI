@@ -1,0 +1,392 @@
+/*================================================================================
+	Item Name: Frest HTML Admin Template
+	Version: 1.0
+	Author: PIXINVENT
+	Author URL: http://www.themeforest.net/user/pixinvent
+================================================================================
+
+NOTE:
+------
+PLACE HERE YOUR OWN SCSS CODES AND IF NEEDED, OVERRIDE THE STYLES FROM THE OTHER STYLESHEETS.
+WE WILL RELEASE FUTURE UPDATES SO IN ORDER TO NOT OVERWRITE YOUR STYLES IT'S BETTER LIKE THIS.  */
+
+.error {
+    color: #ff5b5c !important;
+}
+
+.header-navbar[class*="bg-"] .navbar-nav .nav-item > a i {
+    color: #000000 !important;
+}
+
+.exit-icon,
+.products-icon,
+.statistics-icon,
+.support-icon {
+    width: 29px;
+    height: 29px;
+    margin-left: 10px;
+    background-repeat: no-repeat;
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+    top: -4px;
+    margin-right: 10px;
+}
+
+.products-icon {
+    background-image: url("../../images/icon/search.png");
+    background-size: cover;
+}
+
+.statistics-icon {
+    background-image: url("../../images/icon/statistics.png");
+    background-size: cover;
+}
+
+.support-icon {
+    background-image: url("../../images/icon/support.png");
+    background-size: cover;
+}
+
+.exit-icon {
+    background-image: url("../../images/icon/exit.png");
+    background-size: cover;
+}
+
+.dots-circle-icon {
+    width: 20px;
+    height: 20px;
+    background-repeat: no-repeat;
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+    top: -4px;
+    background-image: url("../../images/icon/dots-circle.svg");
+    background-size: cover;
+}
+
+.basket-checked-bg-whight-icon,
+.basket-cross-bg-whight-icon {
+    width: 32px;
+    height: 32px;
+    background-repeat: no-repeat;
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+    top: -4px;
+    background-size: cover;
+    background-color: #ffffff;
+    border-radius: 50%;
+}
+
+.basket-checked-bg-whight-icon {
+    background-image: url("../../images/icon/basket-checked.svg");
+    background-size: cover;
+}
+
+.basket-cross-bg-whight-icon {
+    background-image: url("../../images/icon/basket-cross.svg");
+    background-size: cover;
+}
+
+.product {
+    &-img {
+        position: relative;
+        float: left;
+        min-width: 88px;
+        i {
+            position: absolute;
+            top: calc(100% - 27px);
+            right: -5px;
+        }
+    }
+    &-img-title {
+        max-width: 100%;
+        padding-left: calc(88px + 15px);
+        font-size: 1rem;
+        line-height: 24px;
+    }
+}
+
+.bg-light {
+    &-red {
+        background-color: #ffeeee;
+    }
+    &-green {
+        background-color: #f3fdf3;
+    }
+}
+
+.mt-150px {
+    margin-top: -150px;
+}
+
+.mw-750 {
+    max-width: 750px;
+}
+
+.mw-500 {
+    max-width: 500px;
+}
+
+//-----------------------------------
+@media (max-width: 790px) {
+    .actions.action-btns {
+        margin-left: 15px;
+        margin-bottom: 15px;
+        margin-top: 15px;
+        padding-left: 0px;
+        flex-wrap: wrap;
+        .invoice-options {
+            margin: 15px 0;
+        }
+    }
+}
+
+//------------------
+.header-navbar-project {
+    background-color: #ceddfa !important;
+    &[class*="bg-"] .navbar-nav .nav-item > a i,
+    &[class*="bg-"] .navbar-nav .nav-item > a span {
+        color: inherit !important;
+    }
+    &[class*="bg-"] .navbar-nav .nav-item > a span.color-white {
+        color: #ffffff !important;
+    }
+    @media (max-width: 480px) {
+        .brand-logo svg {
+            width: 100%;
+        }
+        .logo-navbar-block {
+            display: flex;
+            width: calc(100% - 42px);
+        }
+    }
+}
+
+a.nav-link {
+    position: relative;
+}
+
+a.nav-link .link {
+    position: relative;
+}
+
+a.nav-link .link:after {
+    content: "";
+    width: 100%;
+    display: block;
+    height: 3px;
+    background-color: #147536;
+    position: absolute;
+    top: 30px;
+    left: 0;
+    visibility: hidden;
+    transform: scaleX(0);
+    transition: all 0.3s ease-in-out 0s;
+}
+
+a.nav-link .link:hover:after {
+    visibility: visible;
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
+}
+
+a.nav-link-active .link:after {
+    visibility: visible;
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
+}
+
+//----------------------
+.upload-file__wrapper {
+    display: block;
+    //width: 230px;
+    label {
+        color: #fff;
+        i {
+            top: auto;
+        }
+    }
+}
+
+.upload-file__input {
+    opacity: 0;
+    position: absolute;
+    z-index: -1;
+    overflow: hidden;
+    width: 0.4px;
+    height: 0.4px;
+}
+
+.upload-file__label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.upload-file__icon {
+    width: 30px;
+    height: auto;
+    margin-right: 11px;
+}
+
+.upload-file__label .upload-file__text,
+.upload-file__label .upload-file__icon path {
+    transition: 0.25s ease;
+}
+
+// .upload-file__text,
+// .upload-file__text_2 {
+//     //max-width: 132px;
+// }
+//---------------------------------
+.treeview-project {
+    .badge {
+        // margin: 0 17%;
+        color: inherit;
+        border: none;
+        background: transparent;
+
+        width: 33%;
+        overflow: hidden;
+        white-space: normal;
+    }
+
+    @media (max-width: 680px) {
+        .node-tags-badge-treeview:first-child .badge {
+            border: 1px solid green;
+            display: none;
+        }
+    }
+}
+
+//------------tel-------------------
+@media (max-width: 768px) {
+    h1,
+    .h1 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    h1,
+    .h1 {
+        font-size: 1.5rem;
+    }
+}
+
+//---------------
+// .form-container-project {}
+html .blank-page .content-wrapper .flexbox-container.form-container-project {
+    display: flex;
+    align-items: center;
+    height: calc(100vh - 160px);
+    justify-content: center;
+}
+
+.w-200px {
+    width: 200px;
+}
+
+table.table-border-bottom-dash {
+    thead th {
+        border-bottom: 1px dashed #cccccc !important;
+    }
+    td {
+        border-bottom: 1px dashed #cccccc !important;
+    }
+    tr:last-child td {
+        border-bottom: none !important;
+    }
+}
+
+.rezult {
+    &-first-line {
+        padding: 1.15rem 2rem;
+        font-size: 22px;
+    }
+    &-second-line {
+        padding: 1.15rem 2rem;
+        font-weight: bold;
+        font-size: 24px;
+    }
+}
+
+.table-center td,
+.table-center th {
+    text-align: center;
+}
+
+.width-170 {
+    width: 170px;
+}
+
+.return-action {
+    text-align: center;
+    font-size: 10px;
+    i {
+        font-size: 24px;
+    }
+    // &.change {}
+    &.refuse {
+        color: #eb5757;
+    }
+    &.accept {
+        color: #147536;
+    }
+}
+
+.bg-gray {
+    background-color: #e5e5e5;
+}
+
+.card.round .card-header {
+    border-top-left-radius: inherit;
+    border-top-right-radius: inherit;
+}
+
+.input-group-pus-minus {
+    flex-wrap: nowrap;
+    button {
+        padding: 0.4rem 1rem;
+    }
+    button:first-child {
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+    button:last-child {
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+    }
+    .input-group-text {
+        border-radius: 0;
+        border-left: none;
+    }
+}
+
+.modal-body {
+    &__application-new-product {
+
+        .weights-measure-group {
+            select {
+                max-width: 70px;
+            }
+            label {
+                text-transform: lowercase;
+            }
+        }
+        .price-group {
+            input {
+                width: 30px !important;
+            }
+        }
+
+        .modal-header .close.rounded-pill { 
+            padding: 0 !important;
+        }
+    }
+
+
+}
