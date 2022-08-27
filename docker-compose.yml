@@ -1,0 +1,58 @@
+version: "3.7"
+services:
+  app-LaravelExampleTaskWithDI:
+    build:
+      args:
+        user: sammy
+        uid: 1000
+      context: ./
+      dockerfile: /var/www/LaravelExampleTaskWithDI/docker/php/Dockerfile/
+    image: travellist
+    container_name: app-LaravelExampleTaskWithDI
+    restart: unless-stopped
+    working_dir: /var/www/LaravelExampleTaskWithDI/
+    volumes:
+      - /var/www/LaravelExampleTaskWithDI:/var/www/
+    networks:
+      - LaravelExampleTaskWithDI
+
+  db-LaravelExampleTaskWithDI:
+    image: mysql:5.7
+    container_name: db-LaravelExampleTaskWithDI
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
+      MYSQL_DATABASE: ${DB_DATABASE}
+      MYSQL_USER_NAME: ${DB_USERNAME}
+    ports:
+      - 3308:3306
+    volumes:
+        - /var/www/LaravelExampleTaskWithDI:/var/www/
+    networks:
+      - LaravelExampleTaskWithDI
+
+  nginx-LaravelExampleTaskWithDI:
+    image: nginx:alpine
+    container_name: nginx-LaravelExampleTaskWithDI
+    restart: unless-stopped
+    ports:
+      - 80:80
+    volumes:
+      - ./:/var/www
+      - /var/www/LaravelExampleTaskWithDI/docker/nginx:/etc/nginx/conf.d/
+      - /var/www/LaravelExampleTaskWithDI/docker/nginx/logs:/var/log/nginx
+    networks:
+      - LaravelExampleTaskWithDI
+
+  adminer-LaravelExampleTaskWithDI:
+      image: adminer
+      container_name: admimer-LaravelExampleTaskWithDI
+      restart: always
+      ports:
+          - 44:8080
+      networks:
+          - LaravelExampleTaskWithDI
+
+networks:
+  LaravelExampleTaskWithDI:
+    driver: bridge

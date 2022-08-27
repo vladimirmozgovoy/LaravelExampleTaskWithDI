@@ -2,14 +2,12 @@
 /public/hot
 /public/storage
 /public/uploads
-/docker
 /storage/*.key
 /vendor
 .env
 .env-prod
 .env.backup
 .phpunit.result.cache
-docker-compose.override.yml
 Homestead.json
 Homestead.yaml
 npm-debug.log
@@ -17,4 +15,3 @@ yarn-error.log
 /.idea
 /.vscode
 *.sql
-docker-compose.yml
